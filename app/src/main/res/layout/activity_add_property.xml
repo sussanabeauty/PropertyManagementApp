@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View" />
+        <import type="org.sussanacode.propertymanagementapplication.viewmodel.CommonBinding"/>
+        <variable
+            name="viewmodel"
+            type="org.sussanacode.propertymanagementapplication.viewmodel.PropertyViewModel" />
+    </data>
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.AddPropertyActivity">
+
+
+    <TextView
+        android:id="@+id/tvaddress"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/step1" />
+
+    <LinearLayout
+        android:id="@+id/ll_address"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <EditText
+            android:text="@{viewmodel.address}"
+            android:hint="Property Address"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:text="@{viewmodel.city}"
+            android:layout_marginTop="16dp"
+            android:hint="Property City"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:text="@{viewmodel.state}"
+            android:hint="State/Province"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:text="@{viewmodel.country}"
+            android:hint="Country"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvpopertydetails"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_margin"
+        android:text="@string/step2" />
+    <LinearLayout
+        android:id="@+id/ll_property_details"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <EditText
+            android:text="@{CommonBinding.convertBooleanToString(viewmodel.propertyStatus)}"
+            android:hint="Property Status"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RadioButton
+            android:text="Are there multiple units? "
+            android:layout_marginTop="16dp"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <EditText
+            android:text="@{viewmodel.purchasePrice}"
+            android:layout_marginTop="16dp"
+            android:hint="Purchasing Price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RadioButton
+            android:text="Exclude from Dashboard? "
+            android:layout_marginTop="16dp"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:text="Add a Photo of your Property"
+            android:textColor="#0066cc"
+            android:background="@drawable/add_photo_button"
+            android:drawableStart="@drawable/ic_camera"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="@dimen/button_padding"
+            android:paddingRight="@dimen/button_padding"
+            android:layout_marginTop="@dimen/common_margin"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvmortgageinfo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:text="@string/step3"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_mortgageInfo"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RadioButton
+            android:text="@{@string/mortgagaetext(CommonBinding.convertBooleanToString(viewmodel.mortageInfo))}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layoutDirection="rtl"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:text="Save and Add a Tenants"
+            android:textColor="@color/black"
+            android:background="@drawable/save_tenant_button"
+            android:drawableStart="@drawable/ic_save"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="@dimen/button_padding"
+            android:paddingRight="@dimen/button_padding"
+            android:layout_marginTop="@dimen/common_margin"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:onClick='@{() -> viewmodel.addProperty()}'
+        android:text="Add Property Detail"
+        android:textColor="@color/black"
+        android:background="@drawable/save_property_button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="@dimen/button_padding"
+        android:paddingRight="@dimen/button_padding"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"/>
+
+    <ProgressBar
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="@{viewmodel.loading? View.VISIBLE : View.GONE}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
+
+</layout>

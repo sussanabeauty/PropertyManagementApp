@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">IProperty</string>
+    <string name="label_greeting">Welcome back! Log in to continue</string>
+    <string name="hint_email_address">Email Address</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_log_in">Log In</string>
+    <string name="label_forgot_password">Forgot Password</string>
+    <string name="label_register">Do not have an account? Sign up</string>
+    <string name="login_activity">Login</string>
+    <string name="label_instruction">We will send a link to reset your password</string>
+    <string name="hint_enter_email_address">Enter your email</string>
+    <string name="btn_send_link">Send reset link</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="label_get_started">Get started with us</string>
+    <string name="label_login">Have an account already? Log in</string>
+    <string name="radio_landlord">I am a landlord</string>
+    <string name="radio_tenant">I am a tenant</string>
+    <string name="hint_enter_landlord_email">Enter landlord email</string>
+    <string name="hint_enter_password">Enter your password</string>
+    <string name="hint_enter_name">Enter your name</string>
+    <string name="btn_register">Register</string>
+    <string name="label_terms_and_conditions">By clicking create account, you agreed to our teams and conditions</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="or_continue_with">Or continue with</string>
+    <string name="continue_with_facebook">Continue With Facebook</string>
+    <string name="continue_with_google">Continue With Google</string>
+    <string name="or_login_with">Or Login With</string>
+    <string name="hint_confirm_password">Confirm your password</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="my_profile">My Profile</string>
+    <string name="app_settings">App Settings</string>
+    <string name="alert_preferences">Alert Preferences</string>
+    <string name="security">Security</string>
+    <string name="account_and_billing"><![CDATA[ACCOUNT & BILLING]]></string>
+    <string name="welcome">Hello,</string>
+    <string name="my_current_plan">My Current Plan</string>
+    <string name="payment_details">Payment Details</string>
+    <string name="properties">Properties</string>
+    <string name="tenant_management">Tenant Management</string>
+    <string name="gross_income">Gross Income</string>
+    <string name="gross_expense">Gross Expense</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="notification">Notification</string>
+
+
+    <string name="step1"><b>Step 1: Property Address</b><br><br> Enter the rental property`s address below.The address is used to label each property, and to make it easier to log tips </br></br> </string>
+    <string name="step2"><b>Step 2: Property Details</b><br><br>Next we\'d like some basic information about the property. if you input the\npurchase price then we can calculate your property\'s cash on cash invested % correctly.</br></br></string>
+    <string name="step3"><b>Step 3: Mortgage Information</b><br><br>If your property has a mortgage, then inputting its mortgage terms enables\n
+        Housters to automatically set the principal, interest, and escrow amounts when\n you log mortgage payment transactions.\n
+        It you made extra principal payments, then logging them as mortgage principal transactions will update the amortization schedule</br></br></string>
+
+    <string name="citystate">%1$s, %2$s</string>
+    <string name="mortgagaetext">Does this property have a mortgage %s</string>
+    <string name="country"><b>Country</b> %s</string>
+    <string name="purchasingprice"><b>Purchasing Price </b>$%s</string>
+    <string name="propertystatus"><b>Status</b> %s</string>
+    <string name="mortgageinfo"><b>MortgageInfo</b> %s</string>
+
+</resources>

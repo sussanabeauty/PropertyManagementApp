@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="org.sussanacode.propertymanagementapplication.viewmodel.CommonBinding"/>
+        <variable
+            name="properties"
+            type="org.sussanacode.propertymanagementapplication.entity.response.Property" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:padding="@dimen/common_padding"
+        android:layout_margin="@dimen/small_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivpropertyImg"
+                remote_source="@{properties.image}"
+                place_holder="@{@drawable/property_placeholder}"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+
+
+
+            <TextView
+                android:id="@+id/tvpropertyname"
+                android:text="@{properties._id}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvpropertyaddress"
+                android:text="@{properties.address}"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvpropertycity"
+                android:text="@{@string/citystate(properties.city , properties.state)}"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvpropertycity"-->
+<!--                android:text='@{properties.city}'-->
+<!--                android:gravity="center"-->
+<!--                android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvpropertystate"-->
+<!--                android:text="@{properties.state}"-->
+<!--                android:gravity="center"-->
+<!--                android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
+
+            <TextView
+                android:id="@+id/tvpropertycounty"
+                android:text="@{@string/country(properties.country)}"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/tvpropertyprice"
+                android:text="@{@string/purchasingprice(properties.purchasePrice)}"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/tvpropertystate"
+                android:text="@{@string/propertystatus(CommonBinding.convertBooleanToString(properties.propertyStatus))}"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvpropertymortgageInfo"
+                android:text="@{@string/mortgageinfo(CommonBinding.convertBooleanToString(properties.mortageInfo))}"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvpropertyunit"-->
+<!--                    android:text="Unit(s): 0"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvavailability"-->
+<!--                    android:text="Availability"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/tvpropertyunit"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    />-->
+
+<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
+<!--    <data>-->
+<!--        <variable-->
+<!--            name="properties"-->
+<!--            type="org.sussanacode.propertymanagementapplication.entity.response.Property" />-->
+<!--    </data>-->
+
+<!--<androidx.cardview.widget.CardView-->
+<!--    android:padding="@dimen/common_padding"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content">-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/ivpropertyImg"-->
+<!--            remote_source="@{properties.image}"-->
+<!--            place_holder="@{@drawable/property_placeholder}"-->
+<!--            android:layout_width="160dp"-->
+<!--            android:layout_height="200dp"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        />-->
+
+<!--        <LinearLayout-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="200dp"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/ivpropertyImg"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent">-->
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvpropertyname"-->
+<!--                android:text="@{properties._id}"-->
+<!--                android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvpropertyaddress"-->
+<!--                android:text="@{properties.address}"-->
+<!--                android:gravity="center"-->
+<!--                android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvpropertycity"-->
+<!--                android:text='@{properties.city + "," + properties.state}'-->
+<!--                android:gravity="center"-->
+<!--                android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
+
+
+<!--&lt;!&ndash;            <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/tvpropertystate"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:text='@{properties.state}'&ndash;&gt;-->
+<!--&lt;!&ndash;                android:gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textAppearance="@style/TextAppearance.AppCompat.Medium"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="wrap_content" />&ndash;&gt;-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvpropertycounty"-->
+<!--                android:text="@{properties.country}"-->
+<!--                android:gravity="center"-->
+<!--                android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvpropertyprice"-->
+<!--                android:text="@{properties.purchasePrice}"-->
+<!--                android:gravity="center"-->
+<!--                android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
+
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvpropertyunit"-->
+<!--                    android:text="Unit(s): 0"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvavailability"-->
+<!--                    android:text="Availability"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/tvpropertyunit"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        </LinearLayout>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--</androidx.cardview.widget.CardView>-->
+<!--</layout>-->

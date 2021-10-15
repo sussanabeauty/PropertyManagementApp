@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/myProfile"
+        android:icon="@drawable/ic_my_profile"
+        android:title="@string/my_profile" />
+    <item
+        android:id="@+id/appSettings"
+        android:icon="@drawable/ic_app_settings"
+        android:title="@string/app_settings" />
+    <item
+        android:id="@+id/alertPreferences"
+        android:icon="@drawable/ic_alert_preferences"
+        android:title="@string/alert_preferences" />
+    <item
+        android:id="@+id/security"
+        android:icon="@drawable/ic_security"
+        android:title="@string/security" />
+
+    <item android:title="@string/account_and_billing" />
+    <item
+        android:id="@+id/myCurrentPlan"
+        android:icon="@drawable/ic_alert_preferences"
+        android:title="@string/my_current_plan" />
+    <item
+        android:id="@+id/paymentDetails"
+        android:icon="@drawable/ic_payment_details"
+        android:title="@string/payment_details" />
+</menu>

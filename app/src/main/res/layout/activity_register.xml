@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="userDetails"
+            type="org.sussanacode.propertymanagementapplication.register.RegisterActivityViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            tools:context=".register.RegisterActivity">
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="@dimen/small_margin"
+                android:src="@drawable/ic_house"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/viewDividerLine"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:background="@color/light_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+
+            <TextView
+                android:id="@+id/tvGetStarted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:text="@string/label_get_started"
+                android:textColor="@color/black"
+                android:textSize="@dimen/xbig_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewDividerLine" />
+
+            <TextView
+                android:id="@+id/tvLogIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/big_margin"
+                android:text="@string/label_login"
+                android:textColor="@color/black"
+                android:textSize="@dimen/small_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvGetStarted" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/standard_margin"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLogIn">
+
+                <RadioButton
+                    android:id="@+id/radioLandlord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> userDetails.landlordChecked()}"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_selector_radio_button"
+                    android:layoutDirection="rtl"
+                    android:text="@string/radio_landlord"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="@dimen/standard_text_size" />
+
+                <RadioButton
+                    android:id="@+id/radioTenant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="@{() -> userDetails.tenantChecked()}"
+                    android:layout_marginLeft="@dimen/standard_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_selector_radio_button"
+                    android:layoutDirection="rtl"
+                    android:text="@string/radio_tenant"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="@dimen/standard_text_size" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/etEmailAddress"
+                android:layout_width="0dp"
+                android:text="@={userDetails.email}"
+                text_error="@{userDetails.emailError}"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/standard_margin"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:background="@drawable/custom_selector_login_edit_text"
+                android:hint="@string/hint_enter_email_address"
+                android:padding="@dimen/standard_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radioGroup" />
+
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="0dp"
+                android:inputType="textPassword"
+                android:layout_height="wrap_content"
+                android:text="@={userDetails.password}"
+                text_error="@{userDetails.passwordError}"
+                android:layout_marginHorizontal="@dimen/standard_margin"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:background="@drawable/custom_selector_login_edit_text"
+                android:hint="@string/hint_enter_password"
+                android:padding="@dimen/standard_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etEmailAddress" />
+
+            <EditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="0dp"
+                android:inputType="textPassword"
+                android:layout_height="wrap_content"
+                android:text="@={userDetails.confirmPassword}"
+                text_error="@{userDetails.confirmPasswordError}"
+                android:layout_marginHorizontal="@dimen/standard_margin"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:background="@drawable/custom_selector_login_edit_text"
+                android:hint="@string/hint_confirm_password"
+                android:padding="@dimen/standard_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etPassword" />
+
+
+            <EditText
+                android:id="@+id/etLandlordEmail"
+                android:layout_width="0dp"
+                android:text="@={userDetails.landlordEmail}"
+                text_error="@{userDetails.landlordEmailError}"
+                android:layout_height="wrap_content"
+                android:visibility="@{userDetails.tenantRadioButton? View.VISIBLE : View.GONE}"
+                android:layout_marginHorizontal="@dimen/standard_margin"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:background="@drawable/custom_selector_login_edit_text"
+                android:hint="@string/hint_enter_landlord_email"
+                android:padding="@dimen/standard_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etConfirmPassword" />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@={userDetails.name}"
+                text_error="@{userDetails.nameError}"
+                android:layout_marginHorizontal="@dimen/standard_margin"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:background="@drawable/custom_selector_login_edit_text"
+                android:hint="@string/hint_enter_name"
+                android:padding="@dimen/standard_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etLandlordEmail" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:text="@string/btn_register"
+                android:onClick="@{() -> userDetails.register()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etName" />
+
+            <TextView
+                android:id="@+id/tvTerms"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/enormous_margin"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:layout_marginBottom="@dimen/standard_margin"
+                android:gravity="center_horizontal"
+                android:text="@string/label_terms_and_conditions"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnRegister" />
+
+
+            <ProgressBar
+                android:visibility="@{userDetails.progressBar ? View.VISIBLE : View.GONE}"
+                android:id="@+id/progressBar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
